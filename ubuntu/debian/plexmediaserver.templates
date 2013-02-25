@@ -1,0 +1,41 @@
+Template: plexmediaserver/runasuser
+Type: select
+Default: plex
+Choices: plex, ${firstuser}, Manually Specify User
+Description: Select which user that should run Plex Media Server
+ By default the Media Server is running under the user 'plex', this
+ has the benefit of reducing security risks, but it can also be hard
+ to manage permissions, especially if you are storing your media on
+ external harddrives.
+ 
+ If you are new to Ubuntu or Linux in general it might be wise to
+ chose your own user in the list below. If your user is not listed
+ you need to select the option "manually specify user" and enter it
+ there.
+ 
+
+Template: plexmediaserver/runascustomuser
+Type: string
+Default: 
+Description: Enter your custom user that should run Plex Media Server
+ Enter a username that should be running the media server.
+
+
+Template: plexmediaserver/nosuchuser
+Type: note
+Description: No such user ${faileduser}
+ That user doesn't exsist.
+
+
+Template: plexmediaserver/oldlibrary
+Type: note
+Description: Old library in ${oldlibrary}
+ A old Plex Media Server library is detected in ${oldlibrary}, if you
+ change the user that runs the Media Server it might not be able to read
+ the old library, you need to copy it to it's new location and probably
+ change the permissions as well.
+
+Template: plexmediaserver/runuser
+Type: string
+Description: The user it runs as
+ Hello, you shouldn't see this.
